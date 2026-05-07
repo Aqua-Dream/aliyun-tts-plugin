@@ -20,7 +20,7 @@ from maibot_sdk.types import ToolParameterInfo, ToolParamType
 
 DEFAULT_TTS_ENDPOINT = "https://dashscope.aliyuncs.com/api/v1/services/aigc/multimodal-generation/generation"
 DEFAULT_REALTIME_ENDPOINT = "wss://dashscope.aliyuncs.com/api-ws/v1/realtime"
-DEFAULT_MODEL = "qwen3-tts-instruct-flash-realtime"
+DEFAULT_MODEL = "qwen3-tts-instruct-flash"
 DEFAULT_VOICE = "Sunny"
 DEFAULT_FORMAT = "wav"
 DEFAULT_SAMPLE_RATE = 24000
@@ -69,7 +69,7 @@ class AliyunTTSConfig(PluginConfigBase):
     api_key: str = Field(default="", description="阿里云百炼 DashScope API Key")
     endpoint: str = Field(default=DEFAULT_TTS_ENDPOINT, description="语音合成接口地址")
     realtime_endpoint: str = Field(default=DEFAULT_REALTIME_ENDPOINT, description="实时语音合成 WebSocket 地址")
-    use_realtime: bool = Field(default=True, description="是否优先使用 Qwen 实时语音合成")
+    use_realtime: bool = Field(default=False, description="是否优先使用 Qwen 实时语音合成")
     model: str = Field(default=DEFAULT_MODEL, description="语音合成模型")
     voice: str = Field(default=DEFAULT_VOICE, description="默认音色")
     audio_format: str = Field(default=DEFAULT_FORMAT, description="音频格式：wav、mp3、opus 或 pcm")
