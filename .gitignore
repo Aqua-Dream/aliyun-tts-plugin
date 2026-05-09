@@ -1,0 +1,7 @@
+# 本地配置（含 config.toml、config.*.backup 等）
+config.*
+# 仓库内保留的脱敏示例（需写在 config.* 之后）
+!config.toml.example
+
+# Python 字节码缓存目录
+__pycache__/

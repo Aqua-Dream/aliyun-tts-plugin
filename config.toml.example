@@ -1,14 +1,17 @@
+# 使用说明：复制本文件为 config.toml，将占位项替换为你的 DashScope API Key 与音色等配置。
+# 不要将含真实密钥的 config.toml 提交到公开仓库。
+
 [plugin]
 enabled = true
-config_version = "1.0.0"
+config_version = "1.0.3"
 
 [tts]
 api_key = ""
 endpoint = "https://dashscope.aliyuncs.com/api/v1/services/aigc/multimodal-generation/generation"
 realtime_endpoint = "wss://dashscope.aliyuncs.com/api-ws/v1/realtime"
 use_realtime = false
-model = "qwen3-tts-instruct-flash"
-voice = "Sunny"
+model = "cosyvoice-v3.5-plus"
+voice = "cosyvoice-v3.5-plus-kirara-<在此填入控制台中的音色 ID>"
 audio_format = "wav"
 sample_rate = 24000
 volume = 35
@@ -23,6 +26,9 @@ default_scene = "闲聊对话"
 default_emotion = "happy"
 enable_noise = true
 noise_level = 0.003
+inference_ws_endpoint = "wss://dashscope.aliyuncs.com/api-ws/v1/inference"
+enable_cosyvoice_instruction = false
+workspace_id = ""
 
 [tools]
 enable_send_tts_voice = true
